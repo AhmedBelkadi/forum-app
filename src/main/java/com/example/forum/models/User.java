@@ -2,6 +2,7 @@ package com.example.forum.models;
 
 public class User {
 
+
     private int id;
     private String nom;
     private String email;
@@ -14,6 +15,9 @@ public class User {
     }
 
     public User() {
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {

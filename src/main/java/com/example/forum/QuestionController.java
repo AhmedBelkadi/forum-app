@@ -8,14 +8,18 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -30,24 +34,20 @@ public class QuestionController implements Initializable {
     // Assume you have a QuestionDao instance
     private QuestionDao questionDao = new QuestionDaoImpl();
 
-//    @FXML
-//    public void initialize() {
-//
-//    }
+
 
     private HBox createQuestionCard(Question question) {
         HBox card = new HBox();
-        card.setStyle("-fx-background-color: #f8d7da; -fx-padding: 10; -fx-spacing: 10; -fx-border-radius: 5; -fx-border-color: #dc3545;");
+        card.setStyle("-fx-background-color: white; -fx-spacing: 100; -fx-padding: 35; -fx-border-radius: 10; -fx-border-color: blue;");
 
         VBox contentBox = new VBox();
         contentBox.getChildren().addAll(
                 createLabel("Question: " + question.getQuestion(), "16px", "bold"),
                 createLabel("Date de création: " + question.getDate(), "12px", "#6c757d"),
-                createLabel("Créateur: " + question.getNomUser() + " (" + question.getEmailUser() + ")", "12px", "#6c757d"),
-                createTextArea(question.getQuestion()),
-                createButton("Répondre", event -> showReponsesScene(question))
+                createLabel("Créateur: " + question.getUser().getNom() + " (" + question.getUser().getEmail() + ")", "12px", "#6c757d"),
+                createButton("Les reponses", event -> showReponsesScene(question))
         );
-//                createButton("Répondre", event -> showReponsesScene(question))
+
 
         card.getChildren().add(contentBox);
         return card;
@@ -59,23 +59,38 @@ public class QuestionController implements Initializable {
         return label;
     }
 
-    private TextArea createTextArea(String text) {
-        TextArea textArea = new TextArea(text);
-        textArea.setStyle("-fx-font-size: 14px;");
-        textArea.setEditable(false);
-        textArea.setWrapText(true);
-        return textArea;
-    }
+
 
     private Button createButton(String text, EventHandler<ActionEvent> eventHandler) {
         Button button = new Button(text);
-        button.setStyle("-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;");
+        button.setStyle("-fx-background-color: blue; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
         button.setOnAction(eventHandler);
         return button;
     }
 
     private void showReponsesScene(Question question) {
         // Implement logic to show responses scene for the selected question
+        try {
+            // Load the ResponsesScene.fxml file
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("reponse.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+
+            // Get the controller from the loader
+            ReponseController responsesController = loader.getController();
+
+            // Pass the selected question to the ResponsesController
+            responsesController.initData(question);
+
+            // Get the current stage
+            Stage stage = (Stage) questionsContainer.getScene().getWindow();
+
+            // Update the scene of the current stage
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception appropriately
+        }
+        System.out.println(question.getId());
     }
 
     @Override

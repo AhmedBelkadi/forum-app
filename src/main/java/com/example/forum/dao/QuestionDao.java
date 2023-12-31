@@ -7,7 +7,7 @@ import java.util.List;
 public interface QuestionDao {
 
     List<Question> getAllQuestions();
-    Question getQuestionById(int questionId);
+//    Question getQuestionById(int questionId);
     List<Question> getQuestionsByUserId(int userId);
     void addQuestion(Question question);
 

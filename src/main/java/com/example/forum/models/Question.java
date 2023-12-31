@@ -5,19 +5,16 @@ public class Question {
     private int id;
     private String question;
     private String date;
-    private int userId;
-    private String nomUser;
-    private String emailUser;
+
+    private User user;
 
     public Question() {
     }
 
-    public Question(String question, String date, int userId, String nomUser, String emailUser) {
+    public Question(String question, String date, User user) {
         this.question = question;
         this.date = date;
-        this.userId = userId;
-        this.nomUser = nomUser;
-        this.emailUser = emailUser;
+        this.user = user;
     }
 
     public int getId() {
@@ -44,27 +41,11 @@ public class Question {
         this.date = date;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getNomUser() {
-        return nomUser;
-    }
-
-    public void setNomUser(String nomUser) {
-        this.nomUser = nomUser;
-    }
-
-    public String getEmailUser() {
-        return emailUser;
-    }
-
-    public void setEmailUser(String emailUser) {
-        this.emailUser = emailUser;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
