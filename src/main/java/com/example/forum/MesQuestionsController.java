@@ -24,7 +24,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class QuestionController implements Initializable {
+public class MesQuestionsController implements Initializable {
 
     @FXML
     private VBox questionsContainer;
@@ -41,11 +41,17 @@ public class QuestionController implements Initializable {
         card.setStyle("-fx-background-color: white; -fx-spacing: 100; -fx-padding: 35; -fx-border-radius: 10; -fx-border-color: blue;");
 
         VBox contentBox = new VBox();
+        Button buttonU = new Button("update");
+        buttonU.setStyle("-fx-background-color: green; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
+        Button buttonD = new Button("delete");
+        buttonD.setStyle("-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
         contentBox.getChildren().addAll(
                 createLabel("Question: " + question.getQuestion(), "16px", "bold"),
                 createLabel("Date de création: " + question.getDate(), "12px", "#6c757d"),
                 createLabel("Créateur: " + question.getUser().getNom() + " (" + question.getUser().getEmail() + ")", "12px", "#6c757d"),
-                createButton("Les reponses", event -> showReponsesScene(question))
+                createButton("Les reponses", event -> showReponsesScene(question)),
+                buttonD,
+                buttonU
         );
 
 
@@ -90,29 +96,10 @@ public class QuestionController implements Initializable {
             e.printStackTrace();
             // Handle the exception appropriately
         }
-        System.out.println(question.getId());
-    }
-
-    @FXML
-    private void showMesQstsScene() {
-        // Implement logic to show responses scene for the selected question
-        try {
-            // Load the ResponsesScene.fxml file
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mes-questions.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
-
-
-            // Get the current stage
-            Stage stage = (Stage) questionsContainer.getScene().getWindow();
-
-            // Update the scene of the current stage
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Handle the exception appropriately
-        }
 //        System.out.println(question.getId());
     }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -126,7 +113,7 @@ public class QuestionController implements Initializable {
 
     private void loadQuestions() {
         // Load questions from the database
-        List<Question> questions = questionDao.getAllQuestions();
+        List<Question> questions = questionDao.getQuestionsByUserId(11);
 
         // Clear existing questions
         questionsContainer.getChildren().clear();

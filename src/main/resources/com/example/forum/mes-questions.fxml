@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.QuestionController">
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.MesQuestionsController">
 
     <children>
 
@@ -26,8 +26,16 @@
                                 <Font name="System Bold" size="28.0" />
                             </font>
                         </Text>
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="home" />
-                  <Button layoutX="320.0" layoutY="15.0" mnemonicParsing="false" onAction="#showMesQstsScene" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="mes questions" />
+                        <Text fill="WHITE" layoutX="420.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="home">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="380.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mes questions">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Text>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0">
@@ -48,28 +56,28 @@
 
         <Line endX="100.0" startX="-994.96435546875" startY="0.48684796690940857" strokeWidth="0.5" />
 
-      <HBox alignment="CENTER" prefHeight="65.0" prefWidth="1100.0" spacing="180.0">
-         <children>
-      
-              <Label alignment="CENTER" prefHeight="50.0" prefWidth="317.0" text="Liste des Questions">
-                   <font>
-                      <Font size="28.0" />
-                   </font>
-              </Label>
-<!--            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="123.0" text="ajouter question" />-->
-             <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="ajouter question" />
-         </children>
-      </HBox>
+        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="1100.0" spacing="180.0">
+            <children>
 
-<!--         ScrollPane for scrolling if necessary-->
+                <Label alignment="CENTER" prefHeight="50.0" prefWidth="317.0" text="Liste des Questions">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Label>
+                <!--            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="123.0" text="ajouter question" />-->
+                <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="ajouter question" />
+            </children>
+        </HBox>
+
+        <!--         ScrollPane for scrolling if necessary-->
         <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="670.0" prefWidth="1000" style="-fx-alignment: center">
             <!-- VBox to contain question cards -->
             <VBox fx:id="questionsContainer" alignment="CENTER" spacing="20.0">
 
-                
-            <padding>
-               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-            </padding>
+
+                <padding>
+                    <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                </padding>
 
             </VBox>
         </ScrollPane>

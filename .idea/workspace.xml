@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c087a7c2-232c-403b-846d-a5490a67223f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/MesQuestionsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/mes-questions.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/controllers/ReponseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/ReponseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/dao/QuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/dao/QuestionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/QuestionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/QuestionDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/ReponseDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/ReponseDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/models/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/models/Reponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/models/Reponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/reponse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/reponse.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +83,7 @@
       <updated>1703952498536</updated>
       <workItem from="1703952499724" duration="7612000" />
       <workItem from="1703974719073" duration="4159000" />
-      <workItem from="1704044722933" duration="4892000" />
+      <workItem from="1704044722933" duration="9180000" />
     </task>
     <servers />
   </component>
