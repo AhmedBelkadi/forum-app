@@ -6,17 +6,60 @@ import com.example.forum.models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
-public class UserController {
+public class UserController implements Initializable {
+
+    @FXML
+    private HBox navbarHBox;
+
+    @FXML
+    private Button logoutButton;
+
+    @FXML
+    private Button mesQuestionsButton;
+
+    @FXML
+    private Button loginButton;
+
+    @FXML
+    private Button registerButton;
+
+    private void updateNavbarButtonsVisibility() {
+        User currentUser = UserSession.getCurrentUser();
+
+        if (currentUser != null) {
+            // User is logged in, show the "Logout" and "Mes Questions" buttons
+            logoutButton.setVisible(true);
+            mesQuestionsButton.setVisible(true);
+
+            // Hide the "Login" and "Register" buttons
+            loginButton.setVisible(false);
+            registerButton.setVisible(false);
+        } else {
+            // User is not logged in, hide the "Logout" and "Mes Questions" buttons
+            logoutButton.setVisible(false);
+            mesQuestionsButton.setVisible(false);
+
+            // Show the "Login" and "Register" buttons
+            loginButton.setVisible(true);
+            registerButton.setVisible(true);
+        }
+    }
+
 
     private UserDao userDao = new UserDaoImpl();
 
@@ -97,6 +140,8 @@ public class UserController {
         if (userOptional.isPresent() && userDao.checkPassword(userOptional.get(), password)) {
             UserSession.setCurrentUser(userOptional.get());
             System.out.println("Login successful");
+            updateNavbarButtonsVisibility();
+
             // Redirect to the home or user's questions scene
 
             try {
@@ -178,6 +223,7 @@ public class UserController {
             userDao.saveUser(newUser);
             System.out.println("Registration successful");
 
+
             // Redirect to the login page or perform other actions after successful registration
             try {
                 FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
@@ -251,43 +297,9 @@ public class UserController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateNavbarButtonsVisibility();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 }

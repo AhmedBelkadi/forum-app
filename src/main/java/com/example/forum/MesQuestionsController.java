@@ -3,6 +3,7 @@ package com.example.forum;
 import com.example.forum.dao.QuestionDao;
 import com.example.forum.daoImpl.QuestionDaoImpl;
 import com.example.forum.models.Question;
+import com.example.forum.models.User;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -27,13 +28,53 @@ import java.util.ResourceBundle;
 public class MesQuestionsController implements Initializable {
 
     @FXML
-    private VBox questionsContainer;
-    private Timeline timeline;
-    private QuestionDao questionDao = new QuestionDaoImpl();
+    private HBox navbarHBox;
+
+    @FXML
+    private Button loginButton;
+
+    @FXML
+    private Button registerButton;
+
+    @FXML
+    private Button logoutButton;
+
+    @FXML
+    private Button mesQuestionsButton;
+
+    private void updateNavbarButtonsVisibility() {
+        User currentUser = UserSession.getCurrentUser();
+
+        if (currentUser != null) {
+            // User is logged in, show the "Logout" and "Mes Questions" buttons
+            logoutButton.setVisible(true);
+            mesQuestionsButton.setVisible(true);
+
+            // Hide the "Login" and "Register" buttons
+            loginButton.setVisible(false);
+            registerButton.setVisible(false);
+        } else {
+            // User is not logged in, hide the "Logout" and "Mes Questions" buttons
+            logoutButton.setVisible(false);
+            mesQuestionsButton.setVisible(false);
+
+            // Show the "Login" and "Register" buttons
+            loginButton.setVisible(true);
+            registerButton.setVisible(true);
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadQuestions();
-        }
+        updateNavbarButtonsVisibility();
+
+    }
+
+    @FXML
+    private VBox questionsContainer;
+    private Timeline timeline;
+    private QuestionDao questionDao = new QuestionDaoImpl();
     private void loadQuestions() {
         // Load questions from the database
         List<Question> questions = questionDao.getQuestionsByUserId(UserSession.getCurrentUser().getId());
@@ -139,6 +180,7 @@ public class MesQuestionsController implements Initializable {
     private void logout() {
         // Clear the user session
         UserSession.clearSession();
+        updateNavbarButtonsVisibility();
 
         // Redirect to the login page or perform other actions after logout
         try {

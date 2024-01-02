@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c087a7c2-232c-403b-846d-a5490a67223f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/UserSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/register.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/HelloController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/MesQuestionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/MesQuestionsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/QuestionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/ReponseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/ReponseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/dao/QuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/dao/QuestionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/QuestionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/QuestionDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/ReponseDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/ReponseDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/mes-questions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/mes-questions.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/question.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/register.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/reponse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/reponse.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,22 +94,12 @@
       <workItem from="1704117716363" duration="3702000" />
       <workItem from="1704126048822" duration="1188000" />
       <workItem from="1704204315223" duration="387000" />
-      <workItem from="1704214091667" duration="7302000" />
+      <workItem from="1704214091667" duration="11314000" />
+      <workItem from="1704233948895" duration="3304000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/forum/ReponseController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

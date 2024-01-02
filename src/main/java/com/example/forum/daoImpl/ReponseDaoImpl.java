@@ -14,13 +14,9 @@ public class ReponseDaoImpl implements ReponseDao {
     private String jdbcUsername = "root";
     private String jdbcPassword = "";
     private Connection connection;
-
     public ReponseDaoImpl() {
         this.connection = getConnection();
     }
-
-
-
     protected Connection getConnection() {
         Connection connection = null;
         try {
@@ -33,7 +29,6 @@ public class ReponseDaoImpl implements ReponseDao {
         }
         return connection;
     }
-
     @Override
     public List<Reponse> getReponsesByQuestionId(int questionId) {
         List<Reponse> reponses = new ArrayList<>();
@@ -62,10 +57,9 @@ public class ReponseDaoImpl implements ReponseDao {
         }
         return reponses;
     }
-
     @Override
     public void addReponse(Reponse reponse) {
-        try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO reponses (user_id, question_id, response, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)")) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO reponses (user_id, question_id, reponse, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)")) {
             preparedStatement.setInt(1, reponse.getUser().getId());
             preparedStatement.setInt(2, reponse.getQuestion().getId());
             preparedStatement.setString(3, reponse.getResponse());

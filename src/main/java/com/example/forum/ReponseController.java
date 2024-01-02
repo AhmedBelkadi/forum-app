@@ -6,13 +6,14 @@ import com.example.forum.models.Question;
 import com.example.forum.models.Reponse;
 
 
-
-
+import com.example.forum.models.User;
 import javafx.fxml.FXML;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -24,15 +25,60 @@ import java.util.List;
 public class ReponseController {
 
     @FXML
+    private HBox navbarHBox;
+
+    @FXML
+    private Button logoutButton;
+
+    @FXML
+    private Button mesQuestionsButton;
+    @FXML
+    private Button loginButton;
+
+    @FXML
+    private Button registerButton;
+
+
+    @FXML
+    private VBox rrr;
+
+
+    private void updateNavbarButtonsVisibility() {
+        User currentUser = UserSession.getCurrentUser();
+
+        if (currentUser != null) {
+            // User is logged in, show the "Logout" and "Mes Questions" buttons
+            logoutButton.setVisible(true);
+            mesQuestionsButton.setVisible(true);
+//            rrr.setVisible(true);
+
+            // Hide the "Login" and "Register" buttons
+            loginButton.setVisible(false);
+            registerButton.setVisible(false);
+        } else {
+            // User is not logged in, hide the "Logout" and "Mes Questions" buttons
+            logoutButton.setVisible(false);
+            mesQuestionsButton.setVisible(false);
+//            rrr.setVisible(false);
+
+            // Show the "Login" and "Register" buttons
+            loginButton.setVisible(true);
+            registerButton.setVisible(true);
+        }
+    }
+
+    @FXML
     private VBox reponsesContainer;
     @FXML
-    private Label labelQuestion;
+    private Label labelQuestion1;
     private Question qst ;
 
     public void initData(Question question) {
-        labelQuestion.setText("Responses for Question: " + question.getQuestion());
+        labelQuestion1.setText("Responses for Question: " + question.getQuestion());
         this.qst = question;
         loadReponses();
+        updateNavbarButtonsVisibility();
+
     }
 
     private ReponseDao reponseDao = new ReponseDaoImpl();
@@ -121,18 +167,8 @@ public class ReponseController {
 
     @FXML
     private void logout() {
-        // Clear the user session
         UserSession.clearSession();
-
-        // Redirect to the login page or perform other actions after logout
-        try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
-            Stage stage = (Stage) reponsesContainer.getScene().getWindow();
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        updateNavbarButtonsVisibility();
     }
 
     @FXML
@@ -145,6 +181,28 @@ public class ReponseController {
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private TextField rpsInput;
+    @FXML
+    private Label b;
+    @FXML
+    private void addReponse(){
+        User currentUser = UserSession.getCurrentUser();
+        if (currentUser == null){
+            b.setText("you should login to add reponse");return;
+        }
+        String reponseText = rpsInput.getText();
+        if (!reponseText.isEmpty()) {
+            Reponse newReponse = new Reponse();
+            newReponse.setResponse(reponseText);
+            newReponse.setUser(currentUser);
+            newReponse.setQuestion(qst);
+            reponseDao.addReponse(newReponse);
+            loadReponses();
+            rpsInput.clear();
         }
     }
 
