@@ -30,12 +30,7 @@ public class QuestionController implements Initializable {
     private VBox questionsContainer;
 
     private Timeline timeline;
-
-    // Assume you have a QuestionDao instance
     private QuestionDao questionDao = new QuestionDaoImpl();
-
-
-
     private HBox createQuestionCard(Question question) {
         HBox card = new HBox();
         card.setStyle("-fx-background-color: white; -fx-spacing: 100; -fx-padding: 35; -fx-border-radius: 10; -fx-border-color: blue;");
@@ -52,50 +47,56 @@ public class QuestionController implements Initializable {
         card.getChildren().add(contentBox);
         return card;
     }
-
     private Label createLabel(String text, String fontSize, String style) {
         Label label = new Label(text);
         label.setStyle("-fx-font-size: " + fontSize + "; -fx-font-weight: " + style + ";");
         return label;
     }
-
-
-
     private Button createButton(String text, EventHandler<ActionEvent> eventHandler) {
         Button button = new Button(text);
         button.setStyle("-fx-background-color: blue; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
         button.setOnAction(eventHandler);
         return button;
     }
-
     private void showReponsesScene(Question question) {
-        // Implement logic to show responses scene for the selected question
         try {
-            // Load the ResponsesScene.fxml file
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("reponse.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
-
-            // Get the controller from the loader
             ReponseController responsesController = loader.getController();
-
-            // Pass the selected question to the ResponsesController
             responsesController.initData(question);
-
-            // Get the current stage
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
-
-            // Update the scene of the current stage
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
-            // Handle the exception appropriately
         }
-        System.out.println(question.getId());
     }
+    @FXML
+    private void showLoginScene( ) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
 
+            Stage stage = (Stage) questionsContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void showRegisterScene( ) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+            Stage stage = (Stage) questionsContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
     private void showMesQstsScene() {
         // Implement logic to show responses scene for the selected question
+
         try {
             // Load the ResponsesScene.fxml file
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mes-questions.fxml"));
@@ -114,6 +115,12 @@ public class QuestionController implements Initializable {
 //        System.out.println(question.getId());
     }
 
+    @FXML
+    private void logout() {
+        // Clear the user session
+        UserSession.clearSession();
+
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Load questions from the database
@@ -123,7 +130,6 @@ public class QuestionController implements Initializable {
         // Set up a timeline to refresh questions every 30 seconds
         setupTimeline();
     }
-
     private void loadQuestions() {
         // Load questions from the database
         List<Question> questions = questionDao.getAllQuestions();
@@ -137,7 +143,6 @@ public class QuestionController implements Initializable {
             questionsContainer.getChildren().add(questionCard);
         }
     }
-
     private void setupTimeline() {
         // Create a timeline that triggers every 30 seconds
         timeline = new Timeline(new KeyFrame(Duration.seconds(9), new EventHandler<ActionEvent>() {
@@ -151,5 +156,7 @@ public class QuestionController implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }
+
+
 
 }

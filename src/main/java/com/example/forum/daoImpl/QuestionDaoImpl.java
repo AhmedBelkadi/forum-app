@@ -14,11 +14,9 @@ public class QuestionDaoImpl implements QuestionDao {
     private String jdbcUsername = "root";
     private String jdbcPassword = "";
     private Connection connection;
-
     public QuestionDaoImpl() {
         this.connection = getConnection();
     }
-
     protected Connection getConnection() {
         Connection connection = null;
         try {
@@ -31,7 +29,6 @@ public class QuestionDaoImpl implements QuestionDao {
         }
         return connection;
     }
-
     @Override
     public List<Question> getAllQuestions() {
         List<Question> questions = new ArrayList<>();
@@ -57,7 +54,6 @@ public class QuestionDaoImpl implements QuestionDao {
         }
         return questions;
     }
-
     @Override
     public List<Question> getQuestionsByUserId(int userId) {
 
@@ -88,14 +84,41 @@ public class QuestionDaoImpl implements QuestionDao {
         return questions;
 
     }
-
-
     @Override
     public void addQuestion(Question question) {
         try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Questions (user_id, question, date) VALUES (?, ?, CURRENT_TIMESTAMP)")) {
             preparedStatement.setInt(1, question.getUser().getId());
             preparedStatement.setString(2, question.getQuestion());
             preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteQst(int questionId) {
+        String sql = "DELETE FROM questions WHERE id = ?";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setInt(1, questionId);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public void updateQst(Question question) {
+        String sql = "UPDATE Questions SET question = ? WHERE id = ?";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, question.getQuestion());
+            preparedStatement.setInt(3, question.getId());
+
+            preparedStatement.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

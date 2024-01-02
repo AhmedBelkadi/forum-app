@@ -21,12 +21,12 @@
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">
                     <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Forum">
+                        <Text fill="WHITE"  strokeType="OUTSIDE" strokeWidth="0.0" text="Forum">
                             <font>
                                 <Font name="System Bold" size="28.0" />
                             </font>
                         </Text>
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="home" />
+                  <Button mnemonicParsing="false" prefHeight="31.0"  prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="home" />
                   <Button layoutX="320.0" layoutY="15.0" mnemonicParsing="false" onAction="#showMesQstsScene" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="mes questions" />
                     </children>
                 </HBox>
@@ -34,9 +34,9 @@
                     <children>
                         <HBox alignment="CENTER" prefHeight="40.0" prefWidth="224.0" spacing="10.0">
                             <children>
-                                <Button mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />
-                                <Button mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />
-                                <Button mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />
+                                <Button mnemonicParsing="false" onAction="#showLoginScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />
+                                <Button mnemonicParsing="false" onAction="#showRegisterScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />
+                                <Button mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />
                             </children>
                         </HBox>
                     </children>

@@ -10,11 +10,15 @@ import com.example.forum.models.Reponse;
 
 import javafx.fxml.FXML;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 
+import java.io.IOException;
 import java.util.List;
 
 public class ReponseController {
@@ -67,6 +71,80 @@ public class ReponseController {
         for (Reponse reponse : reponses) {
             HBox questionCard = createReponseCard(reponse);
             reponsesContainer.getChildren().add(questionCard);
+        }
+    }
+
+    @FXML
+    private void showLoginScene( ) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+
+            Stage stage = (Stage) reponsesContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void showRegisterScene( ) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+            Stage stage = (Stage) reponsesContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void showMesQstsScene() {
+        // Implement logic to show responses scene for the selected question
+
+        try {
+            // Load the ResponsesScene.fxml file
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mes-questions.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+
+
+            // Get the current stage
+            Stage stage = (Stage) reponsesContainer.getScene().getWindow();
+
+            // Update the scene of the current stage
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception appropriately
+        }
+//        System.out.println(question.getId());
+    }
+
+    @FXML
+    private void logout() {
+        // Clear the user session
+        UserSession.clearSession();
+
+        // Redirect to the login page or perform other actions after logout
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+            Stage stage = (Stage) reponsesContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void showHomeScene( ) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+
+            Stage stage = (Stage) reponsesContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

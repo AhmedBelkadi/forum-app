@@ -28,64 +28,136 @@ public class MesQuestionsController implements Initializable {
 
     @FXML
     private VBox questionsContainer;
-
     private Timeline timeline;
-
-    // Assume you have a QuestionDao instance
     private QuestionDao questionDao = new QuestionDaoImpl();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadQuestions();
+        }
+    private void loadQuestions() {
+        // Load questions from the database
+        List<Question> questions = questionDao.getQuestionsByUserId(UserSession.getCurrentUser().getId());
 
+        // Clear existing questions
+        questionsContainer.getChildren().clear();
 
-
+        // Display questions dynamically
+        for (Question question : questions) {
+            HBox questionCard = createQuestionCard(question);
+            questionsContainer.getChildren().add(questionCard);
+        }
+    }
+    private void showReponsesScene(Question question) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("reponse.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+            ReponseController responsesController = loader.getController();
+            responsesController.initData(question);
+            Stage stage = (Stage) questionsContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void deleteQst(int id) {
+        System.out.println(id);
+        questionDao.deleteQst(id);
+        loadQuestions();
+    }
     private HBox createQuestionCard(Question question) {
         HBox card = new HBox();
-        card.setStyle("-fx-background-color: white; -fx-spacing: 100; -fx-padding: 35; -fx-border-radius: 10; -fx-border-color: blue;");
-
         VBox contentBox = new VBox();
-        Button buttonU = new Button("update");
-        buttonU.setStyle("-fx-background-color: green; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
-        Button buttonD = new Button("delete");
-        buttonD.setStyle("-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
+        HBox card_btn = new HBox();
+
+        card.setStyle("-fx-background-color: white; -fx-spacing: 100; -fx-padding: 35; -fx-border-radius: 10; -fx-border-color: blue;");
+        card_btn.getChildren().addAll( createButton("Les reponses", event -> showReponsesScene(question) , "blue" ) ,
+                createButton("delete", event -> deleteQst(question.getId()) , "red" ));
+        card_btn.setStyle("-fx-spacing: 10");
+//                createButton("update", event -> updateQst(question) , "green" ),
         contentBox.getChildren().addAll(
                 createLabel("Question: " + question.getQuestion(), "16px", "bold"),
                 createLabel("Date de création: " + question.getDate(), "12px", "#6c757d"),
                 createLabel("Créateur: " + question.getUser().getNom() + " (" + question.getUser().getEmail() + ")", "12px", "#6c757d"),
-                createButton("Les reponses", event -> showReponsesScene(question)),
-                buttonD,
-                buttonU
+                card_btn
+
         );
 
 
         card.getChildren().add(contentBox);
         return card;
     }
-
     private Label createLabel(String text, String fontSize, String style) {
         Label label = new Label(text);
         label.setStyle("-fx-font-size: " + fontSize + "; -fx-font-weight: " + style + ";");
         return label;
     }
-
-
-
-    private Button createButton(String text, EventHandler<ActionEvent> eventHandler) {
+    private Button createButton(String text, EventHandler<ActionEvent> eventHandler , String color ) {
         Button button = new Button(text);
-        button.setStyle("-fx-background-color: blue; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
+        button.setStyle("-fx-background-color: "+color+" blue; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
         button.setOnAction(eventHandler);
         return button;
     }
 
-    private void showReponsesScene(Question question) {
+
+    @FXML
+    private void showHomeScene( ) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+
+            Stage stage = (Stage) questionsContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void showLoginScene( ) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+
+            Stage stage = (Stage) questionsContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void showRegisterScene( ) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+            Stage stage = (Stage) questionsContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void logout() {
+        // Clear the user session
+        UserSession.clearSession();
+
+        // Redirect to the login page or perform other actions after logout
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            Scene scene = new Scene(loader.load(), 1100, 800);
+            Stage stage = (Stage) questionsContainer.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void showMesQstsScene() {
         // Implement logic to show responses scene for the selected question
         try {
             // Load the ResponsesScene.fxml file
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("reponse.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mes-questions.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
-            // Get the controller from the loader
-            ReponseController responsesController = loader.getController();
-
-            // Pass the selected question to the ResponsesController
-            responsesController.initData(question);
 
             // Get the current stage
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
@@ -99,44 +171,5 @@ public class MesQuestionsController implements Initializable {
 //        System.out.println(question.getId());
     }
 
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Load questions from the database
-        // Load questions from the database initially
-        loadQuestions();
-
-        // Set up a timeline to refresh questions every 30 seconds
-        setupTimeline();
-    }
-
-    private void loadQuestions() {
-        // Load questions from the database
-        List<Question> questions = questionDao.getQuestionsByUserId(11);
-
-        // Clear existing questions
-        questionsContainer.getChildren().clear();
-
-        // Display questions dynamically
-        for (Question question : questions) {
-            HBox questionCard = createQuestionCard(question);
-            questionsContainer.getChildren().add(questionCard);
-        }
-    }
-
-    private void setupTimeline() {
-        // Create a timeline that triggers every 30 seconds
-        timeline = new Timeline(new KeyFrame(Duration.seconds(9), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                // Load and display questions from the database
-                loadQuestions();
-            }
-        }));
-
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-    }
 
 }
