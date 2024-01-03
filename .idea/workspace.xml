@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c087a7c2-232c-403b-846d-a5490a67223f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/QuestionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/QuestionDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/ReponseDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/ReponseDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/reponse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/reponse.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="c087a7c2-232c-403b-846d-a5490a67223f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,12 +48,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.forum.HelloApplication" />
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.forum.Application" />
       <module name="forum" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.forum.*" />
+          <option name="PATTERN" value="com.example.forum.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,7 +83,7 @@
       <workItem from="1704204315223" duration="387000" />
       <workItem from="1704214091667" duration="11314000" />
       <workItem from="1704233948895" duration="3534000" />
-      <workItem from="1704285014747" duration="987000" />
+      <workItem from="1704285014747" duration="2225000" />
     </task>
     <servers />
   </component>

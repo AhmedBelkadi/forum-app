@@ -1,10 +1,10 @@
-package com.example.forum;
+package com.example.forum.controllers;
 
+import com.example.forum.Application;
 import com.example.forum.dao.QuestionDao;
 import com.example.forum.daoImpl.QuestionDaoImpl;
 import com.example.forum.models.Question;
 import com.example.forum.models.User;
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,7 +19,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -91,7 +90,7 @@ public class MesQuestionsController implements Initializable {
     }
     private void showReponsesScene(Question question) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("reponse.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("reponse.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
             ReponseController responsesController = loader.getController();
             responsesController.initData(question);
@@ -144,7 +143,7 @@ public class MesQuestionsController implements Initializable {
     @FXML
     private void showHomeScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("home.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
@@ -156,7 +155,7 @@ public class MesQuestionsController implements Initializable {
     @FXML
     private void showLoginScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("login.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
@@ -168,7 +167,7 @@ public class MesQuestionsController implements Initializable {
     @FXML
     private void showRegisterScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("register.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
             stage.setScene(scene);
@@ -185,7 +184,7 @@ public class MesQuestionsController implements Initializable {
 
         // Redirect to the login page or perform other actions after logout
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("home.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
             stage.setScene(scene);
@@ -198,7 +197,7 @@ public class MesQuestionsController implements Initializable {
         // Implement logic to show responses scene for the selected question
         try {
             // Load the ResponsesScene.fxml file
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mes-questions.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("mes-questions.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
 

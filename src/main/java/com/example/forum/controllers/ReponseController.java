@@ -1,5 +1,6 @@
-package com.example.forum;
+package com.example.forum.controllers;
 
+import com.example.forum.Application;
 import com.example.forum.dao.ReponseDao;
 import com.example.forum.daoImpl.ReponseDaoImpl;
 import com.example.forum.models.Question;
@@ -124,7 +125,7 @@ public class ReponseController {
     @FXML
     private void showLoginScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("login.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
             Stage stage = (Stage) reponsesContainer.getScene().getWindow();
@@ -136,7 +137,7 @@ public class ReponseController {
     @FXML
     private void showRegisterScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("register.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
             Stage stage = (Stage) reponsesContainer.getScene().getWindow();
             stage.setScene(scene);
@@ -150,7 +151,7 @@ public class ReponseController {
 
         try {
             // Load the ResponsesScene.fxml file
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mes-questions.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("mes-questions.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
 
@@ -175,7 +176,7 @@ public class ReponseController {
     @FXML
     private void showHomeScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("home.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
             Stage stage = (Stage) reponsesContainer.getScene().getWindow();

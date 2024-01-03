@@ -1,5 +1,6 @@
-package com.example.forum;
+package com.example.forum.controllers;
 
+import com.example.forum.Application;
 import com.example.forum.dao.QuestionDao;
 import com.example.forum.daoImpl.QuestionDaoImpl;
 import com.example.forum.models.Question;
@@ -15,7 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -99,7 +99,7 @@ public class QuestionController implements Initializable {
     }
     private void showReponsesScene(Question question) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("reponse.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("reponse.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
             ReponseController responsesController = loader.getController();
             responsesController.initData(question);
@@ -112,7 +112,7 @@ public class QuestionController implements Initializable {
     @FXML
     private void showLoginScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("login.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
@@ -124,7 +124,7 @@ public class QuestionController implements Initializable {
     @FXML
     private void showRegisterScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("register.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
             stage.setScene(scene);
@@ -138,7 +138,7 @@ public class QuestionController implements Initializable {
 
         try {
             // Load the ResponsesScene.fxml file
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mes-questions.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("mes-questions.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
 

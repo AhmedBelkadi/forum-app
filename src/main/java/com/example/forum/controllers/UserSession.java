@@ -1,4 +1,4 @@
-package com.example.forum;
+package com.example.forum.controllers;
 
 import com.example.forum.models.User;
 

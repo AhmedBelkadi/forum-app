@@ -1,9 +1,9 @@
-package com.example.forum;
+package com.example.forum.controllers;
 
+import com.example.forum.Application;
 import com.example.forum.dao.UserDao;
 import com.example.forum.daoImpl.UserDaoImpl;
 import com.example.forum.models.User;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -146,7 +146,7 @@ public class UserController implements Initializable {
             // Redirect to the home or user's questions scene
 
             try {
-                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+                FXMLLoader loader = new FXMLLoader(Application.class.getResource("home.fxml"));
                 Scene scene = new Scene(loader.load(), 1100, 800);
                 Stage stage = (Stage) emailField.getScene().getWindow();
                 stage.setScene(scene);
@@ -227,7 +227,7 @@ public class UserController implements Initializable {
 
             // Redirect to the login page or perform other actions after successful registration
             try {
-                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+                FXMLLoader loader = new FXMLLoader(Application.class.getResource("login.fxml"));
                 Scene scene = new Scene(loader.load(), 1100, 800);
                 Stage stage = (Stage) nomFieldr.getScene().getWindow();
                 stage.setScene(scene);
@@ -244,7 +244,7 @@ public class UserController implements Initializable {
     @FXML
     private void showHomeScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("home.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
             Stage stage = (Stage) hhh.getScene().getWindow();
@@ -256,7 +256,7 @@ public class UserController implements Initializable {
     @FXML
     private void showLoginScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("login.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
             Stage stage = (Stage) hhh.getScene().getWindow();
@@ -268,7 +268,7 @@ public class UserController implements Initializable {
     @FXML
     private void showRegisterScene( ) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("register.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
             Stage stage = (Stage) hh.getScene().getWindow();
             stage.setScene(scene);
@@ -281,7 +281,7 @@ public class UserController implements Initializable {
         // Implement logic to show responses scene for the selected question
         try {
             // Load the ResponsesScene.fxml file
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mes-questions.fxml"));
+            FXMLLoader loader = new FXMLLoader(Application.class.getResource("mes-questions.fxml"));
             Scene scene = new Scene(loader.load(), 1100, 800);
 
 
