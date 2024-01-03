@@ -14,9 +14,11 @@ public class ReponseDaoImpl implements ReponseDao {
     private String jdbcUsername = "root";
     private String jdbcPassword = "";
     private Connection connection;
+
     public ReponseDaoImpl() {
         this.connection = getConnection();
     }
+
     protected Connection getConnection() {
         Connection connection = null;
         try {
@@ -29,6 +31,7 @@ public class ReponseDaoImpl implements ReponseDao {
         }
         return connection;
     }
+
     @Override
     public List<Reponse> getReponsesByQuestionId(int questionId) {
         List<Reponse> reponses = new ArrayList<>();

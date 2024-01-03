@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -72,7 +73,7 @@ public class QuestionController implements Initializable {
     private QuestionDao questionDao = new QuestionDaoImpl();
     private HBox createQuestionCard(Question question) {
         HBox card = new HBox();
-        card.setStyle("-fx-background-color: white; -fx-spacing: 100; -fx-padding: 35; -fx-border-radius: 10; -fx-border-color: blue;");
+        card.setStyle("-fx-background-color: white; -fx-spacing: 100; -fx-padding: 35; -fx-border-radius: 10; -fx-border-color: #042552;");
 
         VBox contentBox = new VBox();
         contentBox.getChildren().addAll(
@@ -93,14 +94,16 @@ public class QuestionController implements Initializable {
     }
     private Button createButton(String text, EventHandler<ActionEvent> eventHandler) {
         Button button = new Button(text);
-        button.setStyle("-fx-background-color: blue; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
+        button.setStyle("-fx-background-color: #042552; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
         button.setOnAction(eventHandler);
         return button;
     }
     private void showReponsesScene(Question question) {
         try {
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("reponse.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
             ReponseController responsesController = loader.getController();
             responsesController.initData(question);
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
@@ -113,7 +116,9 @@ public class QuestionController implements Initializable {
     private void showLoginScene( ) {
         try {
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("login.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
 
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
             stage.setScene(scene);
@@ -125,7 +130,9 @@ public class QuestionController implements Initializable {
     private void showRegisterScene( ) {
         try {
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("register.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
             stage.setScene(scene);
         } catch (IOException e) {
@@ -139,7 +146,9 @@ public class QuestionController implements Initializable {
         try {
             // Load the ResponsesScene.fxml file
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("mes-questions.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
 
 
             // Get the current stage

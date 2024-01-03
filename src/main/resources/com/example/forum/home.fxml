@@ -5,20 +5,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.controllers.QuestionController">
+<BorderPane prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.controllers.QuestionController">
+<center>
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
 
     <children>
 
 
 
 
-        <HBox fx:id="navbarHBox" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: blue; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">
+<!--        <HBox fx:id="navbarHBox" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #042552; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">-->
+<!--            <children>-->
+<!--                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">-->
+<!--                </HBox>-->
+<!--                <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0">-->
+<!--                    <children>-->
+<!--                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="224.0" spacing="10.0">-->
+<!--                        </HBox>-->
+<!--                    </children>-->
+<!--                </HBox>-->
+<!--            </children>-->
+<!--        </HBox>-->
+
+        <HBox fx:id="navbarHBox" alignment="CENTER" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #042552; -fx-padding: 10;">
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">
                     <children>
@@ -39,15 +55,18 @@
                   </Text>
                     </children>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0">
+<!--                <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0" >-->
+<!--                            <children>-->
+<!--                                <Button fx:id="loginButton" mnemonicParsing="false" onAction="#showLoginScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />-->
+<!--                                <Button fx:id="registerButton" mnemonicParsing="false" onAction="#showRegisterScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />-->
+<!--                                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />-->
+<!--                            </children>-->
+<!--                </HBox>-->
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="224.0" spacing="10.0">
                     <children>
-                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="224.0" spacing="10.0">
-                            <children>
-                                <Button fx:id="loginButton" mnemonicParsing="false" onAction="#showLoginScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />
-                                <Button fx:id="registerButton" mnemonicParsing="false" onAction="#showRegisterScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />
-                                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />
-                            </children>
-                        </HBox>
+                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#showLoginScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />
+                        <Button fx:id="registerButton" mnemonicParsing="false" onAction="#showRegisterScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />
+                        <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />
                     </children>
                 </HBox>
             </children>
@@ -57,7 +76,7 @@
 
         <Line endX="100.0" startX="-994.96435546875" startY="0.48684796690940857" strokeWidth="0.5" />
 
-      <HBox alignment="CENTER" prefHeight="286.0" prefWidth="1100.0" spacing="180.0">
+      <HBox alignment="CENTER" prefHeight="101.0" prefWidth="1100.0" spacing="180.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="245.0" prefWidth="504.0">
                <children>
@@ -67,12 +86,23 @@
                             <Font size="28.0" />
                          </font>
                     </Label>
-                  <VBox fx:id="qqq" alignment="CENTER" prefHeight="102.0" prefWidth="504.0" spacing="7.0">
+                  <VBox fx:id="qqq" prefHeight="136.0" prefWidth="504.0" spacing="7.0">
                      <children>
-                        <Label prefHeight="30.0" prefWidth="476.0" text="question" />
-                        <TextField fx:id="qstInput" prefHeight="36.0" prefWidth="474.0" />
-                        <Label fx:id="b" layoutX="20.0" layoutY="20.0" prefHeight="30.0" prefWidth="476.0" textFill="RED" />
-                        <Button fx:id="addQstBtn" mnemonicParsing="false" onAction="#addQuestion" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="ajouter question" />
+                              <HBox alignment="CENTER" prefHeight="117.0" prefWidth="474.0" spacing="20.0">
+                                 <children>
+                                    <VBox prefHeight="95.0" prefWidth="302.0" spacing="5.0">
+                                       <children>
+                                    <Label prefHeight="30.0" prefWidth="476.0" text="question" />
+                                    <TextField fx:id="qstInput" prefHeight="46.0" prefWidth="302.0" style="-fx-border-color: #042552; -fx-border-radius: 15;" />
+                                    <Label fx:id="b" prefHeight="30.0" prefWidth="476.0" textFill="RED" />
+                                       </children>
+                                    </VBox>
+                              <Button fx:id="addQstBtn" mnemonicParsing="false" onAction="#addQuestion" prefHeight="0.0" prefWidth="128.0" style="-fx-background-color: #042552; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="ajouter question" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
                      </children>
                      <padding>
                         <Insets bottom="20.0" left="10.0" right="20.0" top="10.0" />
@@ -100,3 +130,5 @@
 
     </children>
 </VBox>
+</center>
+</BorderPane>

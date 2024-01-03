@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -91,7 +92,9 @@ public class MesQuestionsController implements Initializable {
     private void showReponsesScene(Question question) {
         try {
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("reponse.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
             ReponseController responsesController = loader.getController();
             responsesController.initData(question);
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
@@ -110,11 +113,11 @@ public class MesQuestionsController implements Initializable {
         VBox contentBox = new VBox();
         HBox card_btn = new HBox();
 
-        card.setStyle("-fx-background-color: white; -fx-spacing: 100; -fx-padding: 35; -fx-border-radius: 10; -fx-border-color: blue;");
-        card_btn.getChildren().addAll( createButton("Les reponses", event -> showReponsesScene(question) , "blue" ) ,
+        card.setStyle("-fx-background-color: white; -fx-spacing: 100; -fx-padding: 35; -fx-border-radius: 10; -fx-border-color: #042552;");
+        card_btn.getChildren().addAll( createButton("Les reponses", event -> showReponsesScene(question) , "#042552" ) ,
                 createButton("delete", event -> deleteQst(question.getId()) , "red" ));
         card_btn.setStyle("-fx-spacing: 10");
-//                createButton("update", event -> updateQst(question) , "green" ),
+//                createButton("update", event -> updateQst(question) , "#FFCF2D" ),
         contentBox.getChildren().addAll(
                 createLabel("Question: " + question.getQuestion(), "16px", "bold"),
                 createLabel("Date de création: " + question.getDate(), "12px", "#6c757d"),
@@ -134,7 +137,7 @@ public class MesQuestionsController implements Initializable {
     }
     private Button createButton(String text, EventHandler<ActionEvent> eventHandler , String color ) {
         Button button = new Button(text);
-        button.setStyle("-fx-background-color: "+color+" blue; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
+        button.setStyle("-fx-background-color: "+color+" #042552; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;-fx-margin:5 0;");
         button.setOnAction(eventHandler);
         return button;
     }
@@ -144,7 +147,9 @@ public class MesQuestionsController implements Initializable {
     private void showHomeScene( ) {
         try {
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("home.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
 
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
             stage.setScene(scene);
@@ -156,7 +161,9 @@ public class MesQuestionsController implements Initializable {
     private void showLoginScene( ) {
         try {
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("login.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
 
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
             stage.setScene(scene);
@@ -168,7 +175,9 @@ public class MesQuestionsController implements Initializable {
     private void showRegisterScene( ) {
         try {
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("register.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
             stage.setScene(scene);
         } catch (IOException e) {
@@ -185,7 +194,9 @@ public class MesQuestionsController implements Initializable {
         // Redirect to the login page or perform other actions after logout
         try {
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("home.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
             Stage stage = (Stage) questionsContainer.getScene().getWindow();
             stage.setScene(scene);
         } catch (IOException e) {
@@ -198,7 +209,9 @@ public class MesQuestionsController implements Initializable {
         try {
             // Load the ResponsesScene.fxml file
             FXMLLoader loader = new FXMLLoader(Application.class.getResource("mes-questions.fxml"));
-            Scene scene = new Scene(loader.load(), 1100, 800);
+                    double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        Scene scene = new Scene(loader.load(), screenWidth, screenHeight);
 
 
             // Get the current stage

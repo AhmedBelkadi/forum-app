@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="hh" prefHeight="668.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.controllers.UserController">
+<BorderPane prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.controllers.UserController">
+<center>
+<VBox fx:id="hh" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox fx:id="navbarHBox" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: blue; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">
+
+<!--      <HBox fx:id="navbarHBox" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #042552; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">-->
+<!--         <children>-->
+<!--            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">-->
+<!--            </HBox>-->
+<!--            <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0">-->
+<!--            </HBox>-->
+<!--         </children>-->
+<!--      </HBox>-->
+
+      <HBox fx:id="navbarHBox" alignment="CENTER" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #042552; -fx-padding: 10;">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">
                <children>
@@ -47,15 +60,30 @@
             </HBox>
          </children>
       </HBox>
-      <VBox alignment="CENTER" layoutX="247.0" layoutY="126.0" prefHeight="238.0" prefWidth="573.0" spacing="10.0">
-         <children>
-            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Login" />
-            <TextField fx:id="emailField" promptText="Email" style="-fx-font-size: 16px;" />
-            <Label fx:id="errorLabelEmailLogin" />
-            <PasswordField fx:id="passwordField" promptText="Password" style="-fx-font-size: 16px;" />
-            <Label fx:id="errorLabelPasswordLogin" />
-            <Button onAction="#login" prefHeight="30.0" prefWidth="179.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="Login" />
-         </children>
-      </VBox>
+            <HBox alignment="CENTER" prefHeight="726.0" prefWidth="1100.0">
+               <children>
+      
+            
+            
+                  <VBox alignment="CENTER" prefHeight="267.0" prefWidth="700.0" spacing="5.0" style="-fx-border-color: #042552; -fx-border-style: bold; -fx-border-width: 2; -fx-border-radius: 15;">
+               <children>
+                  <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Login" textFill="#042552" />
+                  <TextField fx:id="emailField" prefHeight="37.0" prefWidth="994.0" promptText="Email" style="-fx-font-size: 16px;" />
+                  <Label fx:id="errorLabelEmailLogin" />
+                  <PasswordField fx:id="passwordField" prefHeight="37.0" prefWidth="183.0" promptText="Password" style="-fx-font-size: 16px;" />
+                  <Label fx:id="errorLabelPasswordLogin" />
+                  <Button onAction="#login" prefHeight="30.0" prefWidth="498.0" style="-fx-background-color: #042552; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10; -fx-border-color: #042552; -fx-border-width: 2; -fx-border-style: bold; -fx-border-radius: 15;" text="Login" />
+               </children>
+                     <padding>
+                        <Insets left="100.0" right="100.0" />
+                     </padding>
+            </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="200.0" top="200.0" />
+               </padding>
+            </HBox>
    </children>
-</AnchorPane>
+</VBox>
+</center>
+</BorderPane>

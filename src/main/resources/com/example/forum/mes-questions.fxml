@@ -4,122 +4,74 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.controllers.MesQuestionsController">
+<BorderPane prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.controllers.MesQuestionsController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
 
-    <children>
-
-
-
-
-<!--        <HBox alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: blue; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">-->
-<!--            <children>-->
-<!--                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">-->
-<!--                    <children>-->
-<!--                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Forum">-->
-<!--                            <font>-->
-<!--                                <Font name="System Bold" size="28.0" />-->
-<!--                            </font>-->
-<!--                        </Text>-->
-<!--                        <Text fill="WHITE" layoutX="420.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="home">-->
-<!--                            <font>-->
-<!--                                <Font size="20.0" />-->
-<!--                            </font>-->
-<!--                        </Text>-->
-<!--                        <Text fill="WHITE" layoutX="380.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mes questions">-->
-<!--                            <font>-->
-<!--                                <Font size="20.0" />-->
-<!--                            </font>-->
-<!--                        </Text>-->
-<!--                    </children>-->
-<!--                </HBox>-->
-<!--                <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0">-->
-<!--                    <children>-->
-<!--                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="224.0" spacing="10.0">-->
-<!--                            <children>-->
-<!--                                <Button mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />-->
-<!--                                <Button mnemonicParsing="false" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />-->
-<!--                                <Button mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />-->
-<!--                            </children>-->
-<!--                        </HBox>-->
-<!--                    </children>-->
-<!--                </HBox>-->
-<!--            </children>-->
-<!--        </HBox>-->
-
-
-        <HBox fx:id="navbarHBox" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: blue; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">
-            <children>
-                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">
-                    <children>
+            <HBox fx:id="navbarHBox" alignment="CENTER" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #042552; -fx-padding: 10;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0" >
+                     <children>
                         <Text fill="WHITE" onMouseClicked="#showHomeScene" strokeType="OUTSIDE" strokeWidth="0.0" text="Forum">
-                            <font>
-                                <Font name="System Bold" size="28.0" />
-                            </font>
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
                         </Text>
-                  <Text fill="WHITE" onMouseClicked="#showHomeScene" strokeType="OUTSIDE" strokeWidth="0.0" text="home">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="mesQuestionsButton" fill="WHITE" onMouseClicked="#showMesQstsScene" strokeType="OUTSIDE" strokeWidth="0.0" text="mes questions">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                  </Text>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0">
-                    <children>
+                        <Text fill="WHITE" onMouseClicked="#showHomeScene" strokeType="OUTSIDE" strokeWidth="0.0" text="home">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="mesQuestionsButton" fill="WHITE" onMouseClicked="#showMesQstsScene" strokeType="OUTSIDE" strokeWidth="0.0" text="mes questions">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0" >
+                     <children>
                         <HBox alignment="CENTER" prefHeight="40.0" prefWidth="224.0" spacing="10.0">
-                            <children>
-                                <Label fx:id="hhh" />
-                                <Button fx:id="loginButton" mnemonicParsing="false" onAction="#showLoginScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />
-                                <Button fx:id="registerButton" mnemonicParsing="false" onAction="#showRegisterScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />
-                                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />
-                            </children>
+                           <children>
+                              <Label fx:id="hhh" />
+                              <Button fx:id="loginButton" mnemonicParsing="false" onAction="#showLoginScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />
+                              <Button fx:id="registerButton" mnemonicParsing="false" onAction="#showRegisterScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />
+                              <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />
+                           </children>
                         </HBox>
-                    </children>
-                </HBox>
-            </children>
-        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
 
 
 
-        <Line endX="100.0" startX="-994.96435546875" startY="0.48684796690940857" strokeWidth="0.5" />
-
-        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="1100.0" spacing="180.0">
-            <children>
-
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="317.0" text="Liste des Questions">
-                    <font>
+            <HBox alignment="CENTER" prefHeight="72.0" prefWidth="1100.0" spacing="180.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="317.0" text="Liste des Questions">
+                     <font>
                         <Font size="28.0" />
-                    </font>
-                </Label>
-                <!--            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="123.0" text="ajouter question" />-->
-                <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="ajouter question" />
-            </children>
-        </HBox>
-
-        <!--         ScrollPane for scrolling if necessary-->
-        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="670.0" prefWidth="1000" style="-fx-alignment: center">
-            <!-- VBox to contain question cards -->
-            <VBox fx:id="questionsContainer" alignment="CENTER" spacing="20.0">
-
-
-                <padding>
-                    <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-                </padding>
-
-            </VBox>
-        </ScrollPane>
-
-
-
-    </children>
-</VBox>
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="670.0" prefWidth="1000" style="-fx-alignment: center">
+               <content>
+                  <VBox fx:id="questionsContainer" alignment="CENTER" prefHeight="348.0" prefWidth="927.0" spacing="20.0">
+                     <padding>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

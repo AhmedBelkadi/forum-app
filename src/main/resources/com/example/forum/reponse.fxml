@@ -5,16 +5,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.controllers.ReponseController">
+<BorderPane prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.controllers.ReponseController">
+<center>
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
 
     <children>
 
-        <HBox fx:id="navbarHBox" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: blue; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">
+<!--        <HBox fx:id="navbarHBox" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #042552; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">-->
+<!--            <children>-->
+<!--                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">-->
+<!--                </HBox>-->
+<!--                <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0">-->
+<!--                </HBox>-->
+<!--            </children>-->
+<!--        </HBox>-->
+
+        <HBox fx:id="navbarHBox" alignment="CENTER" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #042552; -fx-padding: 10;">
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">
                     <children>
@@ -44,11 +56,18 @@
                                 <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />
                             </children>
                         </HBox>
+
                     </children>
                 </HBox>
             </children>
         </HBox>
-      <HBox alignment="CENTER" prefHeight="177.0" prefWidth="1100.0" spacing="180.0">
+
+
+
+
+
+
+        <HBox alignment="CENTER" prefHeight="177.0" prefWidth="1100.0" spacing="180.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="164.0" prefWidth="578.0">
                <children>
@@ -57,12 +76,30 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <VBox fx:id="rrr" alignment="CENTER" prefHeight="102.0" prefWidth="504.0" spacing="7.0">
+                  <VBox fx:id="rrr" alignment="CENTER" prefHeight="84.0" prefWidth="578.0" spacing="7.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="554.0" text="reponse" />
-                        <TextField fx:id="rpsInput" prefHeight="36.0" prefWidth="474.0" />
-                        <Label fx:id="b" prefHeight="18.0" prefWidth="551.0" textFill="RED" />
-                        <Button fx:id="addRpsBtn" mnemonicParsing="false" onAction="#addReponse" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="ajouter reponse" />
+                              <VBox fx:id="qqq" prefHeight="136.0" prefWidth="504.0" spacing="7.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="117.0" prefWidth="474.0" spacing="20.0">
+                                       <children>
+                                          <VBox prefHeight="95.0" prefWidth="302.0" spacing="5.0">
+                                             <children>
+                                          <Label prefHeight="18.0" prefWidth="554.0" text="reponse" />
+                                                <TextField fx:id="rpsInput" prefHeight="46.0" prefWidth="302.0" style="-fx-border-color: #042552; -fx-border-radius: 15;" />
+                                          <Label fx:id="b" prefHeight="18.0" prefWidth="551.0" textFill="RED" />
+                                             </children>
+                                          </VBox>
+                                          <Button fx:id="addRpsBtn1" mnemonicParsing="false" onAction="#addReponse" style="-fx-background-color: #042552; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="ajouter reponse" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="10.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </VBox>
                      </children>
                      <padding>
                         <Insets bottom="20.0" left="10.0" right="20.0" top="10.0" />
@@ -72,6 +109,8 @@
             </VBox>
          </children>
       </HBox>
+
+
       <HBox alignment="CENTER" prefHeight="37.0" prefWidth="643.0">
          <children>
             <Label fx:id="labelQuestion1" prefHeight="36.0" prefWidth="998.0" text="Responses Scene" textAlignment="CENTER">
@@ -102,3 +141,5 @@
 
     </children>
 </VBox>
+</center>
+</BorderPane>
