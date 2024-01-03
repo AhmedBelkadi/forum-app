@@ -10,7 +10,7 @@ import java.util.*;
 
 public class QuestionDaoImpl implements QuestionDao {
 
-    private String jdbcURL = "jdbc:mysql://localhost:3306/forum";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/forumee";
     private String jdbcUsername = "root";
     private String jdbcPassword = "";
     private Connection connection;

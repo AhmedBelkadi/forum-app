@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -40,7 +41,7 @@ public class MesQuestionsController implements Initializable {
     private Button logoutButton;
 
     @FXML
-    private Button mesQuestionsButton;
+    private Text mesQuestionsButton;
 
     private void updateNavbarButtonsVisibility() {
         User currentUser = UserSession.getCurrentUser();

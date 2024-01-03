@@ -27,8 +27,16 @@
                                 <Font name="System Bold" size="28.0" />
                             </font>
                         </Text>
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="home" />
-                  <Button fx:id="mesQuestionsButton" layoutX="320.0" layoutY="15.0" mnemonicParsing="false" onAction="#showMesQstsScene" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="mes questions" />
+                  <Text fill="WHITE" layoutX="10.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="home">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="mesQuestionsButton" fill="WHITE" layoutX="111.0" layoutY="38.0" onMouseClicked="#showMesQstsScene" strokeType="OUTSIDE" strokeWidth="0.0" text="mes questions">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0">

@@ -14,6 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class UserController implements Initializable {
     private Button logoutButton;
 
     @FXML
-    private Button mesQuestionsButton;
+    private Text mesQuestionsButton;
 
     @FXML
     private Button loginButton;

@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
@@ -31,7 +32,7 @@ public class ReponseController {
     private Button logoutButton;
 
     @FXML
-    private Button mesQuestionsButton;
+    private Text mesQuestionsButton;
     @FXML
     private Button loginButton;
 

@@ -12,40 +12,48 @@
 
 <AnchorPane fx:id="hh" prefHeight="668.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.forum.UserController">
    <children>
-      <HBox alignment="CENTER_RIGHT" fx:id="navbarHBox" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: blue; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">
+      <HBox fx:id="navbarHBox" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: blue; -fx-padding: 10; -fx-border-color: #343a40; -fx-border-width: 0 0 2 0; -fx-border-style: solid;">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="752.0" spacing="15.0">
                <children>
-                  <Text  fill="WHITE" onMouseClicked="#showHomeScene" strokeType="OUTSIDE" strokeWidth="0.0" text="Forum">
+                  <Text fill="WHITE" onMouseClicked="#showHomeScene" strokeType="OUTSIDE" strokeWidth="0.0" text="Forum">
                      <font>
                         <Font name="System Bold" size="28.0" />
                      </font>
                   </Text>
-                  <Button mnemonicParsing="false" onAction="#showHomeScene" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="home" />
-                  <Button layoutX="320.0" layoutY="15.0" mnemonicParsing="false" onAction="#showMesQstsScene" prefHeight="31.0" prefWidth="122.0" fx:id="mesQuestionsButton" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="mes questions" />
+                  <Text fill="WHITE" onMouseClicked="#showHomeScene" strokeType="OUTSIDE" strokeWidth="0.0" text="home">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="mesQuestionsButton" fill="WHITE" onMouseClicked="#showMesQstsScene" strokeType="OUTSIDE" strokeWidth="0.0" text="mes questions">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="253.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="40.0" prefWidth="224.0" spacing="10.0">
                      <children>
-                        <Label fx:id="hhh" ></Label>
-                        <Button mnemonicParsing="false" fx:id="loginButton" onAction="#showLoginScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />
-                        <Button mnemonicParsing="false" fx:id="registerButton" onAction="#showRegisterScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />
-                        <Button mnemonicParsing="false" fx:id="logoutButton" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />
+                        <Label fx:id="hhh" />
+                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#showLoginScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="login" />
+                        <Button fx:id="registerButton" mnemonicParsing="false" onAction="#showRegisterScene" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="register" />
+                        <Button fx:id="logoutButton" mnemonicParsing="false" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 13px; -fx-padding: 5 10;" text="logout" />
                      </children>
                   </HBox>
                </children>
             </HBox>
          </children>
       </HBox>
-      <VBox  alignment="CENTER" layoutX="247.0" layoutY="126.0" prefHeight="238.0" prefWidth="573.0" spacing="10.0">
+      <VBox alignment="CENTER" layoutX="247.0" layoutY="126.0" prefHeight="238.0" prefWidth="573.0" spacing="10.0">
          <children>
             <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Login" />
             <TextField fx:id="emailField" promptText="Email" style="-fx-font-size: 16px;" />
-            <Label fx:id="errorLabelEmailLogin" ></Label>
+            <Label fx:id="errorLabelEmailLogin" />
             <PasswordField fx:id="passwordField" promptText="Password" style="-fx-font-size: 16px;" />
-            <Label fx:id="errorLabelPasswordLogin" ></Label>
+            <Label fx:id="errorLabelPasswordLogin" />
             <Button onAction="#login" prefHeight="30.0" prefWidth="179.0" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10;" text="Login" />
          </children>
       </VBox>

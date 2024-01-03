@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c087a7c2-232c-403b-846d-a5490a67223f" name="Changes" comment="" />
+    <list default="true" id="c087a7c2-232c-403b-846d-a5490a67223f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/QuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/QuestionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/QuestionDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/ReponseDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/ReponseDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/forum/daoImpl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/forum/reponse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/forum/reponse.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,6 +92,7 @@
       <workItem from="1704204315223" duration="387000" />
       <workItem from="1704214091667" duration="11314000" />
       <workItem from="1704233948895" duration="3534000" />
+      <workItem from="1704285014747" duration="987000" />
     </task>
     <servers />
   </component>
