@@ -1,42 +1,41 @@
-# JavaFX Forum Project
+# Projet Forum JavaFX
 
-## Overview
+## Présentation
 
-This project is a simple JavaFX-based forum application for posting questions and answers. It follows the MVC architecture and integrates with a database using JDBC.
+Ce projet est une application de forum simple développée en JavaFX, permettant aux utilisateurs de poser des questions et de fournir des réponses. L'application suit l'architecture MVC et utilise JDBC pour l'intégration avec une base de données MySQL.
 
-## Features
+## Fonctionnalités
 
-- User authentication (login and registration)
-- Posting questions and answers
-- Viewing a list of questions and their respective answers
-- User-specific functionalities ( viewing own questions , deleting own questions )
+- **Authentification des Utilisateurs :** Les utilisateurs peuvent se connecter ou s'inscrire.
+- **Publication de Questions et Réponses :** Possibilité de poser des questions et d'y répondre.
+- **Consultation du Forum :** Affichage d'une liste de questions avec leurs réponses.
+- **Fonctionnalités Utilisateur :** Les utilisateurs peuvent consulter leurs propres questions et les supprimer.
 
-## Technologies Used
+## Technologies Utilisées
 
 - Java
 - JavaFX
 - JDBC
 - MySQL 
 
-## Project Structure
+## diagramme du classe 
 
-- `src/main/java/` - Java source code
-  - `com.example.forum` - Package for the main application
-    - `controllers` - Contains the controller classes
-    - `dao` - Contains Data Access Object (DAO) interfaces
-    - `daoImpl` - Contains Data Access Object (DAO) classes
-    - `models` - Contains entity classes
-  - `resources/` - Contains FXML files for the UI
+![WhatsApp Image 2024-01-04 à 01 55 37_471354e9](https://github.com/AhmedBelkadi/forum-app/assets/136114058/21888f43-a5b2-4b01-a3bd-dc809b0edd59)
 
-- `src/main/resources/` - FXML files for UI design
 
-## Usage
+## Structure du Projet
 
-- Open the application and navigate through the user interface.
-- Log in or register to access additional features.
-- Post questions and answers, view the forum, and manage your own content.
+- `src/main/java/` - Contient le code source Java
+  - `com.example.forum` - Package principal
+    - `controllers` - Classes de contrôleur
+    - `dao` - Interfaces d'objet d'accès aux données (DAO)
+    - `daoImpl` - Classes d'implémentation des DAO
+    - `models` - Classes d'entité
+  - `resources/` - Fichiers FXML pour l'interface utilisateur
 
-## Contributors
+- `src/main/resources/` - Contient les fichiers FXML pour la conception de l'interface utilisateur
 
-- [AHMED BELKADI]
+## Utilisation
 
+- Ouvrez l'application et naviguez à travers l'interface utilisateur.
+- Connectez-vous ou inscrivez-vous pour accéder à des fonctionnalités supplémentaires.
