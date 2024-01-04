@@ -20,7 +20,8 @@ Ce projet est une application de forum simple développée en JavaFX, permettant
 
 ## diagramme du classe 
 
-![WhatsApp Image 2024-01-04 à 01 55 37_471354e9](https://github.com/AhmedBelkadi/forum-app/assets/136114058/21888f43-a5b2-4b01-a3bd-dc809b0edd59)
+![image](https://github.com/AhmedBelkadi/forum-app/assets/136114058/92da46f7-e06d-4ba0-a4fd-394026e4b16c)
+
 
 
 ## Structure du Projet
