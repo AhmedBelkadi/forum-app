@@ -2,7 +2,7 @@
 
 ## Présentation
 
-Ce projet est une application de forum simple développée en JavaFX, permettant aux utilisateurs de poser des questions et de fournir des réponses. L'application suit l'architecture MVC et utilise JDBC pour l'intégration avec une base de données MySQL.
+Ce projet est une application de forum simple développée en JavaFX, permettant aux utilisateurs de poser des questions et de fournir des réponses. L'application suit l'architecture MVC , DAO et utilise JDBC pour l'intégration avec une base de données MySQL.
 
 ## Fonctionnalités
 
