@@ -22,6 +22,9 @@ Ce projet est une application de forum simple développée en JavaFX, permettant
 
 ![image](https://github.com/AhmedBelkadi/forum-app/assets/136114058/92da46f7-e06d-4ba0-a4fd-394026e4b16c)
 
+## MLD
+
+![image](https://github.com/AhmedBelkadi/forum-app/assets/136114058/3524b39d-eb18-40c2-ac3f-4173f9eac68a)
 
 
 ## Structure du Projet
